@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './AddedItems.css';
+import DeleteItemBtn from "../DeleteItemBtn/DeleteItemBtn.tsx";
 
 interface Props {
     itemName: string,
@@ -15,6 +16,7 @@ const AddedItems: React.FC<Props> = ({itemName, itemPrice, itemAmount, key}) => 
             <h3 className="item-title">{itemName}</h3>
             <span className="item-ammount">× {itemAmount}</span>
             <span className="item-price">{itemPrice} KGS</span>
+            <DeleteItemBtn />
         </div>
     );
 };
