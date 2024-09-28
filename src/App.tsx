@@ -1,17 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import Items from "./components/Items/Items.tsx";
-import drinkImage from '../../assets/free-icon-drinks-665885.png';
-import foodImage from '../../assets/free-icon-dinner-272186.png';
 import * as React from "react";
 import AddedItems from "./components/AddedItems/AddedItems.tsx";
+import drinkImage from './assets/free-icon-drinks-665885.png';
+import foodImage from './assets/free-icon-dinner-272186.png';
 
-interface Props {
-    drinkImage:  string;
-    foodImage:  string;
-}
 
-const App: React.FC<Props> = ({drinkImage,foodImage}) => {
+const App: React.FC = () => {
     const [addedItems, setAddedItems] = useState([]);
 
     const itemsFood  = [
@@ -45,6 +41,11 @@ const App: React.FC<Props> = ({drinkImage,foodImage}) => {
         }
     };
 
+    const removeItem = (itemName: string) => {
+        const filteredItems = addedItems.filter((item) => item.name !== itemName);
+        setAddedItems(filteredItems);
+    };
+
     const totalPrice = addedItems.reduce((acc, item) => acc + item.price * item.amount, 0);
 
   return (
@@ -62,6 +63,7 @@ const App: React.FC<Props> = ({drinkImage,foodImage}) => {
                               itemPrice={item.price}
                               itemAmount={item.amount}
                               totalPrice={totalPrice}
+                              removeItem={() => removeItem(item.name)}
                           />
                       ))}
                       <h3>Total Price: {totalPrice} KGS</h3>
@@ -76,7 +78,7 @@ const App: React.FC<Props> = ({drinkImage,foodImage}) => {
                           addItem={() => addItem(item)}
                           itemName={item.name}
                           itemPrice={item.price}
-                          itemImage={foodImage}/>
+                          itemImage={item.image as string}/>
                   ))}
               </div>
               <div className="drinks-items">
@@ -86,7 +88,7 @@ const App: React.FC<Props> = ({drinkImage,foodImage}) => {
                           addItem={() => addItem(item)}
                           itemName={item.name}
                           itemPrice={item.price}
-                          itemImage={foodImage}/>
+                          itemImage={item.image as string}/>
                   ))}
               </div>
           </div>

@@ -9,6 +9,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border: 1px dotted black;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .add-items {
@@ -23,6 +26,8 @@
   border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
+  margin-right: 20px;
+  margin-bottom: auto;
 }
 
 .drinks-items, .food-items {
