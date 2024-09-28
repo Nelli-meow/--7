@@ -4,3 +4,30 @@
   padding: 2rem;
   text-align: center;
 }
+
+.App-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.add-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.order-details {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.drinks-items, .food-items {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 300px;
+  margin: 15px;
+}
