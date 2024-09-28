@@ -12,6 +12,7 @@
   border: 1px dotted black;
   padding: 25px;
   border-radius: 10px;
+  background-color: #faf0e6;
 }
 
 .add-items {
@@ -20,6 +21,7 @@
   flex-wrap: wrap;
   border: 1px solid black;
   border-radius: 20px;
+  background-color: #d8b8a8;
 }
 
 .order-details {
@@ -28,6 +30,7 @@
   padding: 20px;
   margin-right: 20px;
   margin-bottom: auto;
+  background-color: #f4cbb7;
 }
 
 .drinks-items, .food-items {

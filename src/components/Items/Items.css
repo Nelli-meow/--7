@@ -1,9 +1,10 @@
 .item {
     border: 1px solid black;
-    border-radius: 4px;
+    border-radius: 25px;
     padding: 16px;
     cursor: pointer;
-    background-color: white;
+    background-color: #fff5ee;
+    margin-bottom: 10px;
 }
 
 .item-title {
@@ -12,4 +13,8 @@
 
 .item-price {
     font-size: 20px;
+}
+
+.item-img {
+    width: 25%;
 }
